@@ -1,0 +1,4 @@
+in mcserver/ 
+run server starter.js
+
+run server starter.sh

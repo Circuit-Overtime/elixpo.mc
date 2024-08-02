@@ -1,4 +1,20 @@
-const socket = new WebSocket('ws://10.42.0.66:3004'); // Connect to WebSocket server
+window.onload = function() {
+    globalThis.serverStatus = 'offline';
+}
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDVXrNMHxSYJVAXHSCxb3OLAAThfs11KZw",
+    authDomain: "elixpomc.firebaseapp.com",
+    projectId: "elixpomc",
+    storageBucket: "elixpomc.appspot.com",
+    messagingSenderId: "724065825212",
+    appId: "1:724065825212:web:dcb7abb240b73b7d2cbbb9"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  
+  const socket = new WebSocket('ws://10.42.0.66:3004'); // Connect to WebSocket server
 
 // Update console output with real-time updates
 socket.onmessage = function(event) {
@@ -26,8 +42,8 @@ async function fetchServerStatus() {
     try {
         const response = await fetch('http://10.42.0.66:3003/status');
         const data = await response.json();
-        console.log('Server Status:', data.status);
-        globalThis.serverStatus = data.status;
+        console.log('Game Status:', data.status);
+        serverStatus = data.status;
         // Display server status
         // document.getElementById('server-status').innerText = `Server is ${data.status}`;
     } catch (error) {
@@ -36,14 +52,7 @@ async function fetchServerStatus() {
     }
 }
 
-// Function to send a console command via WebSocket
-function sendConsoleCommand() {
-    const command = document.getElementById('console-command').value;
-    if (command.trim() === '') return;
 
-    socket.send(command);
-    document.getElementById('console-output').innerText += `\n> ${command}`;
-}
 
 // Fetch online players and server status initially and periodically
 fetchOnlinePlayers();
@@ -51,8 +60,6 @@ fetchServerStatus();
 setInterval(fetchOnlinePlayers, 60000); // Update every minute
 setInterval(fetchServerStatus, 30000); // Check server status every 30 seconds
 
-// Bind sendConsoleCommand to button click
-document.getElementById('sendConsoleCmd').addEventListener('click', sendConsoleCommand);
 
 // Function to start the server
 async function startServer() {
