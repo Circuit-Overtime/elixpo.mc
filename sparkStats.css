@@ -1,0 +1,39 @@
+.sparkStats
+{
+    position: absolute;
+    height: 40%;
+    top: 290%;
+    width: 90%;
+    left: 5%;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.sparkStats iframe::-webkit-scrollbar
+{
+    display: none;
+}
+.sparkStats .basicStat
+{
+    position: absolute;
+    top: -68%;
+    left: 0;
+    height: 480px;
+    width: 102%;
+    pointer-events: none;
+}
+
+.sparkStats .basicStat::-webkit-scrollbar
+{
+    display: none;
+}
+/* .sparkStats .deeperStat
+{
+    position: absolute;
+    top: 25%;
+    left: 0;
+    height: 48%;
+    width: 100%;
+    pointer-events: all;
+} */
+

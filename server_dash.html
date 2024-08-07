@@ -6,100 +6,76 @@
     <title>Minecraft Server Dashboard</title>
     <script type="module" src="https://unpkg.com/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@latest/dist/ionicons/ionicons.js"></script>
-    <link rel="stylesheet" href="style.css"></style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleAssests.css">
+    <link rel="stylesheet" href="styleProperties.css">
+    <link rel="stylesheet" href="styleConsole.css">
+    <link rel="stylesheet" href="sparkStats.css">
+    <link rel="stylesheet" href="styleFooter.css">
+
+
 </head>
 <body>
     <div class="container">
-        <h1>Minecraft Server Dashboard</h1>
-        <ion-icon name="wifi" class="serverStatus"></ion-icon>
+        <h1 class="appHeading">Elixpo.mc</h1>
+        <!-- <ion-icon name="wifi" class="serverStatus"></ion-icon> -->
         <!-- Server Controls -->
         <div class="section">
-            <h2>Server Controls</h2>
-            <button class="btn btn-primary" id="startServer">Start Server</button>
-            <button class="btn btn-secondary" id="stopServer">Stop Server</button>
+            <p class="connectIP">21.ip.gl.ply.gg:31052</p>
+            <div class="statusBar" id="statusBar">
+                <p class="serverStatusTextIcon"><ion-icon name="stop-circle" id="serverStatusIcon"></ion-icon><span class="serverStatusText" id="serverStatusText">Offline</span></p>
+            </div>
+            <!-- <button class="btn btn-secondary" id="stopServer">Stop Server</button> -->
+        </div>
+        <div class="controlButtons">
+          <div class="startButtonSection" id="startButtonSection"> <ion-icon name="power"></ion-icon><button class="btn btn-primary" id="startServer">Start Server</button></div> 
+          <div class="stopButtonSection" id="stopButtonSection"> <ion-icon name="stop"></ion-icon><button class="btn btn-primary" id="stopServer">Stop Server</button></div> 
         </div>
 
-        <!-- Server Properties -->
-        <div class="section">
-            <h2>Server Properties</h2>
-            <form id="server-properties-form">
-                <div class="form-group">
-                    <label for="whitelist">Whitelist:</label>
-                    <select id="whitelist" name="whitelist">
-                        <option value="true">Enabled</option>
-                        <option value="false">Disabled</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="max-players">Max Players:</label>
-                    <input type="number" id="max-players" name="max-players" min="0" value="20">
-                </div>
-                <div class="form-group">
-                    <label for="pvp">PvP:</label>
-                    <select id="pvp" name="pvp">
-                        <option value="true">Enabled</option>
-                        <option value="false">Disabled</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="gamemode">Gamemode:</label>
-                    <select id="gamemode" name="gamemode">
-                        <option value="survival">Survival</option>
-                        <option value="creative">Creative</option>
-                        <option value="adventure">Adventure</option>
-                        <option value="spectator">Spectator</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="difficulty">Difficulty:</label>
-                    <select id="difficulty" name="difficulty">
-                        <option value="peaceful">Peaceful</option>
-                        <option value="easy">Easy</option>
-                        <option value="normal">Normal</option>
-                        <option value="hard">Hard</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="online-mode">Online Mode:</label>
-                    <select id="online-mode" name="online-mode">
-                        <option value="true">Enabled</option>
-                        <option value="false">Disabled</option>
-                    </select>
-                </div>
-                <button type="button" class="btn btn-primary" onclick="updateProperties()">Update Properties</button>
-            </form>
+        <div class="sectionServerAssets">
+            <div class="serverSoftware">
+                <div class="softwareIcon"></div>
+                <div class="softwareText"> [1.21] Fabric API 0.101.2+1.21 </div>
+            </div>
+
+            <div class="serverVersion">
+                <div class="versionIcon"></div>
+                <div class="versionText"> 1.21 [Fabric Latest Release] </div>
+            </div>
         </div>
 
-        <!-- Console -->
-        <div class="section">
-            <h2>Server Console</h2>
-            <div class="console-output" id="console-output"></div>
-            <input type="text" id="console-command" placeholder="Enter console command..." style="width: calc(100% - 22px); padding: 10px;">
-            <button class="btn btn-primary" id="sendConsoleCmd">Send Command</button>
+        <div class="serverProperties">
+             <div class="languageSection"><p class="extensionName">.bash</p><p class="pannelName">server.properties</p></div>
+             
+             <div class="propertiesPannel">
+                <textarea id="propetiesPannel" rows="20" cols="50" readonly disabled></textarea>
+            </div>
+        </div>
+       
+        <div class="serverConsole">
+            <div class="consoleExtensionType">
+                <p class="extensionPannelName">> console</p>
+            </div>
+            <textarea name="consoleZone" id="consoleZone" readonly></textarea>
+            
+            <input type="text" class="consoleInput" id="consoleInput" placeholder="Enter Command">
         </div>
 
-        <!-- Online Players -->
-        <div class="section">
-            <h2>Online Players</h2>
-            <ul id="players-list">
-                <!-- List of players will be dynamically added here -->
-            </ul>
-            <button class="btn btn-secondary" onclick="kickPlayer()">Kick Selected Player</button>
+        <div class="sparkStats" id="sparkStats">
+            <iframe class="basicStat" id="basicStat" src="https://spark.lucko.me/PqXU3dYUs0" type=""></iframe>
         </div>
 
-        <!-- Server Metrics -->
-        <div class="section">
-            <h2>Server Metrics</h2>
-            <p><strong>TPS:</strong> <span id="server-tps">N/A</span></p>
-            <p><strong>Server Health:</strong> <span id="server-health">N/A</span></p>
-            <p><strong>World Seed:</strong> <span id="world-seed">N/A</span></p>
-        </div>
-    </div>
+        <div class="footerEnd"></div>
+</div>
+        
 
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
 
-    <script src="mcserverBackend.js"></script>
+    <script src="JS/mcserverBackend.js"></script>
     <!-- <script src="ServerConsole.js"></script> -->
+     <script src="JS/mcServerGeneral.js"></script>
 </body>
 </html>
