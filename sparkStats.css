@@ -1,39 +1,95 @@
-.sparkStats
-{
+
+
+.sparkStats{
     position: absolute;
-    height: 40%;
-    top: 290%;
+    top: 280%;
     width: 90%;
     left: 5%;
-    background-color: transparent;
-    overflow: hidden;
+    background: transparent;
+    height: 400px;
 }
 
-.sparkStats iframe::-webkit-scrollbar
-{
-    display: none;
-}
-.sparkStats .basicStat
+.sparkStats .serverTPS
 {
     position: absolute;
-    top: -68%;
-    left: 0;
-    height: 480px;
-    width: 102%;
-    pointer-events: none;
+    transform: translateY(-50%);
+    top: 20%;
+    left: 5%;
+    width: 400px;
+    height: 90px;
+    /* background: linear-gradient(to right, rgba(255, 105, 180, 1), rgba(255, 105, 180, 0)); */
+    background: linear-gradient(to left, #4babff, transparent);
+    border: 1px solid #fafafa;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    word-wrap: break-word;
 }
-
-.sparkStats .basicStat::-webkit-scrollbar
-{
-    display: none;
-}
-/* .sparkStats .deeperStat
+.sparkStats > .serverTPS > .softwareTPSIcon
 {
     position: absolute;
-    top: 25%;
-    left: 0;
-    height: 48%;
-    width: 100%;
-    pointer-events: all;
-} */
+    top: 5px;
+    left: 5px;
+    height: 80px;
+    width: 80px;
+    background: url("./CSS/IMAGES/tickSpdIcon.png");
+    background-size: cover;
+    filter: invert(1);
+}
 
+.sparkStats > .serverTPS > .softwareTPSText
+{
+    position: absolute;
+    text-align: left;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-family: "Source Code Pro", monospace;
+    font-weight: 700;
+    font-size: 2em;
+}
+
+
+
+
+
+.sparkStats .serverRAM
+{
+    position: absolute;
+    transform: translateY(-50%);
+    top: 20%;
+    left: 40%;
+    width: 400px;
+    height: 90px;
+    /* background: linear-gradient(to right, rgba(255, 105, 180, 1), rgba(255, 105, 180, 0)); */
+    background: linear-gradient(to left, #4babff, transparent);
+    border: 1px solid #fafafa;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+}
+.sparkStats > .serverRAM > .softwareRAMIcon
+{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 80px;
+    width: 80px;
+    background: url("https://w7.pngwing.com/pngs/968/342/png-transparent-line-chart-multicolored-miscellaneous-infographic-angle-thumbnail.png");
+    background-size: cover;
+    filter: invert(1);
+    
+}
+
+.sparkStats > .serverRAM > .softwareRAMText
+{
+    position: absolute;
+    text-align: left;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-family: "Source Code Pro", monospace;
+    font-weight: 700;
+    font-size: 2em;
+}
