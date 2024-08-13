@@ -59,10 +59,10 @@
     transform: translateY(-50%);
     top: 20%;
     left: 40%;
-    width: 400px;
+    width: 350px;
     height: 90px;
     /* background: linear-gradient(to right, rgba(255, 105, 180, 1), rgba(255, 105, 180, 0)); */
-    background: linear-gradient(to left, #4babff, transparent);
+    background: linear-gradient(to right, #136100, #8cffa8, transparent);
     border: 1px solid #fafafa;
     border-radius: 10px;
     flex-wrap: wrap;
@@ -75,7 +75,7 @@
     left: 5px;
     height: 80px;
     width: 80px;
-    background: url("https://w7.pngwing.com/pngs/968/342/png-transparent-line-chart-multicolored-miscellaneous-infographic-angle-thumbnail.png");
+    background: url("./CSS/IMAGES/ramIcon.png");
     background-size: cover;
     filter: invert(1);
     
@@ -85,11 +85,171 @@
 {
     position: absolute;
     text-align: left;
-    left: 50%;
+    left: 40%;
     top: 50%;
     transform: translateY(-50%);
     color: #fff;
     font-family: "Source Code Pro", monospace;
     font-weight: 700;
     font-size: 2em;
+}
+
+
+.sparkStats .serverRAMPhysical
+{
+    position: absolute;
+    transform: translateY(-50%);
+    top: 20%;
+    left: 70%;
+    width: 350px;
+    height: 90px;
+    /* background: linear-gradient(to right, rgba(255, 105, 180, 1), rgba(255, 105, 180, 0)); */
+    background: linear-gradient(to right, #c0c0c0, #f0f0f0, #c0c0c0);
+    border: 1px solid #fafafa;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+}
+.sparkStats > .serverRAMPhysical > .softwareRAMPhysicalIcon
+{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 80px;
+    width: 80px;
+    background: url("./CSS/IMAGES/ramIcon.png");
+    background-size: cover;
+}
+
+.sparkStats > .serverRAMPhysical > .softwareRAMPhysicalText
+{
+    position: absolute;
+    text-align: left;
+    left: 40%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #0b0b0b;
+    font-family: "Source Code Pro", monospace;
+    font-weight: 700;
+    font-size: 2em;
+}
+
+
+.sparkStats .serverCPU
+{
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 5%;
+    width: 400px;
+    height: 90px;
+    /* background: linear-gradient(to right, rgba(255, 105, 180, 1), rgba(255, 105, 180, 0)); */
+    background: linear-gradient(to right, magenta, transparent);
+    border: 1px solid #fafafa;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+}
+.sparkStats > .serverCPU > .serverCPUIcon
+{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 80px;
+    width: 80px;
+    background: url("./CSS/IMAGES/cpuIcon.png");
+    background-size: cover;
+}
+
+.sparkStats > .serverCPU > .serverCPUText
+{
+    position: absolute;
+    text-align: left;
+    left: 40%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-family: "Source Code Pro", monospace;
+    font-weight: 700;
+    font-size: 2em;
+}
+
+
+.sparkStats .serverDisk
+{
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 40%;
+    width: 350px;
+    height: 90px;
+    /* background: linear-gradient(to right, rgba(255, 105, 180, 1), rgba(255, 105, 180, 0)); */
+    background: linear-gradient(to left, #8B4513, transparent);
+    border: 1px solid #fafafa;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+}
+.sparkStats > .serverDisk > .serverDiskIcon
+{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 80px;
+    width: 80px;
+    background: url("./CSS/IMAGES/memorycardIcon.png");
+    background-size: cover;
+}
+
+.sparkStats > .serverDisk > .serverDiskText
+{
+    position: absolute;
+    text-align: left;
+    left: 40%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-family: "Source Code Pro", monospace;
+    font-weight: 700;
+    font-size: 1.6em;
+}
+
+
+.sparkStats .serverUptime
+{
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 70%;
+    width: 350px;
+    height: 90px;
+    /* background: linear-gradient(to right, rgba(255, 105, 180, 1), rgba(255, 105, 180, 0)); */
+    background: linear-gradient(to left, rgb(133, 133, 0), transparent);
+    border: 1px solid #fafafa;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    }
+    .sparkStats > .serverUptime > .serverUptimeIcon
+    {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        height: 80px;
+        width: 80px;
+        background: url("./CSS/IMAGES/serverUptimeIcon.png");
+        background-size: cover;
+    }
+
+.sparkStats > .serverUptime > .serverUptimeText
+{
+    position: absolute;
+    text-align: left;
+    left: 40%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-family: "Source Code Pro", monospace;
+    font-weight: 700;
+    font-size: 1.6em;
 }

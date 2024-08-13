@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="styleConsole.css">
     <link rel="stylesheet" href="sparkStats.css">
     <link rel="stylesheet" href="styleFooter.css">
+    <link rel="stylesheet" href="stylePricing.css">
+    
 
 
 </head>
@@ -70,12 +72,38 @@
                 <div class="softwareRAMIcon"></div>
                 <div class="softwareRAMText"> 4.4/6.0 GB </div>
             </div>
+            <div class="serverRAMPhysical">
+                <div class="softwareRAMPhysicalIcon"></div>
+                <div class="softwareRAMPhysicalText"> 4.4/8.0 GB </div>
+            </div>
+
+            <div class="serverCPU">
+                <div class="serverCPUIcon"></div>
+                <div class="serverCPUText">  26% / 100% </div>
+            </div>
+
+            
+            <div class="serverDisk">
+                <div class="serverDiskIcon"></div>
+                <div class="serverDiskText">  10Gb / 28Gb </div>
+            </div>
+
+            <div class="serverUptime">
+                <div class="serverUptimeIcon"></div>
+                <div class="serverUptimeText">  2h 14m </div>
+            </div>
+            
         </div>
 
+            <div class="pricingPage">
+                <div class="playername">OvertimeC</div>
+                <div class="playerFace"></div>
+                <canvas id="myChart"></canvas>
+            </div>
         <div class="footerEnd"></div>
 </div>
         
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
@@ -84,5 +112,6 @@
     <!-- <script src="JS/mcserverBackend.js"></script> -->
     <!-- <script src="ServerConsole.js"></script> -->
      <script src="JS/mcServerGeneral.js"></script>
+     <script src="JS/playerPaymentChart.js"></script>
 </body>
 </html>
