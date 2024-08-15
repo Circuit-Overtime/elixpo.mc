@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=VT323&display=swap');
+
+.serverConsole
+{
+    position: absolute;
+    height: 90%;
+    width: 90%;
+    left: 5%;
+    top: 190%;
+    padding-bottom: 20px;
+    background: transparent;
+}
+.serverConsole > .consoleExtensionType
+{
+    position: absolute;
+    height: 50px;
+    width: 90%;
+    left: 5%;
+    background: #272525;
+}
+
+#consoleZone
+{
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 90%;
+    height: 60%;
+    resize: none;
+    color: #ffffff;
+    outline: none;
+    border: none;
+    font-size: 1.1em;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background: #c0a1ef4f;
+    border: 2px solid #8339f3;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
+
+.extensionName
+{
+    position: absolute;
+    top: 00%;
+    transform: translateY(-50%);
+    left: 3%;
+    font-family: "Source Code Pro", monospace;
+    color: #fff;
+    font-size: 1.5em; 
+}
+
+.consoleInput
+{
+    position: absolute;
+    top: 85%;
+    left: 5%;
+    font-size: 2em;
+    font-weight: 400;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #8339f3;
+    height: 60px;
+    width: 90%;
+    outline: none;
+    color: #fff;
+    font-family: "VT323", monospace;
+}
+
+.extensionPannelName
+{
+    position: absolute;
+    top: 10%;
+    transform: translateY(-50%);
+    left: 5%;
+    font-family: "Source Code Pro", monospace;
+    color: #656363;
+    font-size: 1.2em;
+}
