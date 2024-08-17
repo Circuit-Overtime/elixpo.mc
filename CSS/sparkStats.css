@@ -31,7 +31,7 @@
     left: 5px;
     height: 80px;
     width: 80px;
-    background: url("./CSS/IMAGES/tickSpdIcon.png");
+    background: url("/CSS/IMAGES/tickSpdIcon.png");
     background-size: cover;
     filter: invert(1);
 }
@@ -40,13 +40,13 @@
 {
     position: absolute;
     text-align: left;
-    left: 50%;
+    left: 40%;
     top: 50%;
     transform: translateY(-50%);
     color: #fff;
     font-family: "Source Code Pro", monospace;
     font-weight: 700;
-    font-size: 2em;
+    font-size: 1.6em;
 }
 
 
@@ -75,7 +75,7 @@
     left: 5px;
     height: 80px;
     width: 80px;
-    background: url("./CSS/IMAGES/ramIcon.png");
+    background: url("/CSS/IMAGES/ramIcon.png");
     background-size: cover;
     filter: invert(1);
     
@@ -91,7 +91,7 @@
     color: #fff;
     font-family: "Source Code Pro", monospace;
     font-weight: 700;
-    font-size: 2em;
+    font-size: 1.3em;
 }
 
 
@@ -117,7 +117,7 @@
     left: 5px;
     height: 80px;
     width: 80px;
-    background: url("./CSS/IMAGES/ramIcon.png");
+    background: url("/CSS/IMAGES/ramIcon.png");
     background-size: cover;
 }
 
@@ -131,7 +131,7 @@
     color: #0b0b0b;
     font-family: "Source Code Pro", monospace;
     font-weight: 700;
-    font-size: 2em;
+    font-size: 1.3em;
 }
 
 
@@ -157,7 +157,7 @@
     left: 5px;
     height: 80px;
     width: 80px;
-    background: url("./CSS/IMAGES/cpuIcon.png");
+    background: url("/CSS/IMAGES/cpuIcon.png");
     background-size: cover;
 }
 
@@ -171,7 +171,7 @@
     color: #fff;
     font-family: "Source Code Pro", monospace;
     font-weight: 700;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 
@@ -197,7 +197,7 @@
     left: 5px;
     height: 80px;
     width: 80px;
-    background: url("./CSS/IMAGES/memorycardIcon.png");
+    background: url("/CSS/IMAGES/memorycardIcon.png");
     background-size: cover;
 }
 
@@ -211,7 +211,7 @@
     color: #fff;
     font-family: "Source Code Pro", monospace;
     font-weight: 700;
-    font-size: 1.6em;
+    font-size: 1.4em;
 }
 
 

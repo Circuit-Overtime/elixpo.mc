@@ -20,6 +20,45 @@ const logRef = rtdb.ref('serverLogs/log');
 const propertyRef = rtdb.ref('serverLogs/property');
 const serverFeedBack = rtdb.ref('serverLogs/feedback');
 
+const serverStatsCPU = rtdb.ref('serverStats/cpu');
+const serverStatsDisk = rtdb.ref('serverStats/diskSpace');
+const serverStatsRAM= rtdb.ref('serverStats/memory');
+const serverStatsPhy_RAM = rtdb.ref('serverStats/physical_memory');
+const serverStatsTPS = rtdb.ref('serverStats/tps');
+
+
+serverStatsCPU.on('value', (snapshot) => {
+    document.getElementById("serverCPUText").innerHTML = snapshot.val() + " / 100%";
+});
+serverStatsDisk.on('value', (snapshot) => {
+    document.getElementById("serverDiskText").innerHTML = snapshot.val() + " / 28 GB";
+});
+serverStatsRAM.on('value', (snapshot) => {
+    document.getElementById("softwareRAMText").innerHTML = snapshot.val() + " /6.0 GB";
+});
+serverStatsPhy_RAM.on('value', (snapshot) => {
+    document.getElementById("softwareRAMPhysicalText").innerHTML = snapshot.val() + " / 8.0 GB";
+});
+serverStatsTPS.on('value', (snapshot) => {
+    document.getElementById("softwareTPSText").innerHTML = "TPS: " + snapshot.val();
+});
+
+serverStatsCPU.on('child_changed', (snapshot) => {
+    document.getElementById("serverCPUText").innerHTML = snapshot.val() + " / 100%";
+});
+serverStatsDisk.on('child_changed', (snapshot) => {
+    document.getElementById("serverDiskText").innerHTML = snapshot.val() + " / 28 GB";
+});
+serverStatsRAM.on('child_changed', (snapshot) => {
+    document.getElementById("softwareRAMText").innerHTML = snapshot.val() + " /6.0 GB";
+});
+serverStatsPhy_RAM.on('child_changed', (snapshot) => {
+    document.getElementById("softwareRAMPhysicalText").innerHTML = snapshot.val() + " / 8.0 GB";
+});
+serverStatsTPS.on('child_changed', (snapshot) => {
+    document.getElementById("softwareTPSText").innerHTML = "TPS: " + snapshot.val();
+});
+
 
 logRef.on('value', (snapshot) => {
     const consoleOutput = document.getElementById('consoleZone');
@@ -202,7 +241,7 @@ async function fetchServerStatus() {
 
 async function pingScript() {
     try {
-        const response = await fetch('http://10.42.0.66:3003/ping');
+        const response = await fetch('http://10.42.0.67:3003/ping');
         const data = await response;
         // console.log('Start Server Response:', data.statusText);
         if(data.statusText == 'OK') {
@@ -222,7 +261,7 @@ async function pingScript() {
 async function stopServer() {
     console.log('Stopping server...');
     try {
-        const response = await fetch('http://10.42.0.66:3003/stop');
+        const response = await fetch('http://10.42.0.67:3003/stop');
         const data = await response;
         if(data.statusText == 'OK') {
             console.log('server stopped...');
@@ -242,13 +281,13 @@ async function stopServer() {
 async function startServer() {
     console.log('Starting server...');
     try {
-        const response = await fetch('http://10.42.0.66:3003/start');
+        const response = await fetch('http://10.42.0.67:3003/start');
         const data = await response;
         if(data.statusText == 'OK') {
             console.log('server starting...');
-            globalThis.gameStatus = 'online';
+            // globalThis.gameStatus = 'online';
         } else {
-            globalThis.gameStatus = 'offline';
+            // globalThis.gameStatus = 'offline';
         }
         // Optionally, update the UI to show start status
 
@@ -266,7 +305,7 @@ document.getElementById('startServer').addEventListener('click', startServer);
 
 async function sendCommand(cmd) {
     try {
-        const response = await fetch('http://10.42.0.66:3003/log', {
+        const response = await fetch('http://10.42.0.67:3003/log', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

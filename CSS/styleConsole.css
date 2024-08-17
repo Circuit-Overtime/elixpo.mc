@@ -39,7 +39,24 @@
     backdrop-filter: blur(10px);
     border-radius: 10px;
 }
+#consoleZone::-webkit-scrollbar {
+    width: 12px; /* Slightly wider scrollbar for better visibility */
+}
 
+#consoleZone::-webkit-scrollbar-track {
+    background: #d7b4fa; /* Darker track for contrast */
+    border-radius: 10px;
+}
+
+#consoleZone::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #8339f3, #c0a1ef); /* Gradient thumb */
+    border-radius: 10px;
+    border: 3px solid #a355f3; /* Matching border for better contrast */
+}
+
+#consoleZone::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #6f1ebf, #a355f3); /* Darker gradient on hover for contrast */
+}
 .extensionName
 {
     position: absolute;

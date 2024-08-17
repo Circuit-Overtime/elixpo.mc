@@ -1,5 +1,5 @@
 window.onload = function() {
-    document.querySelector('.container').scrollTo(0, 2100);
+    document.querySelector('.container').scrollTo(0, 1500);
 };
 
 function scaleContainer() {
