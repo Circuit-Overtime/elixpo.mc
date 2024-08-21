@@ -5,9 +5,9 @@
     position: absolute;
     height: 580px;
     top: 105%;
-    left: 5%;
+    left: 10%;
     margin-bottom: 25px;
-    width: 90%;
+    width: 80%;
     display: flex;
     background-color: rgba(255, 255, 255, 0.197);
     backdrop-filter: blur(15px);
@@ -20,31 +20,34 @@
     user-select: none;
 }
 
-.serverProperties > .languageSection
-{
+.serverProperties > .languageSection {
     position: absolute;
-    width:  100%;
+    width: 100%;
     height: 10%;
     top: 0%;
     left: 0;
     background: #272525;
-    
-    
+    display: flex;
+    align-items: center; /* Centers content vertically */
 }
-.serverProperties .languageSection > .extensionName
-{
-    position: absolute;
-    top: 00%;
-    transform: translateY(-50%);
-    left: 3%;
+
+.serverProperties .languageSection > .extensionName {
     font-family: "Source Code Pro", monospace;
     color: #fff;
     font-size: 2em;
+    margin-left: 3%;
+}
+.minimizePropertyPannel {
+    top: -110%;
+    position: absolute;
+    left: 95%; /* Align to the right edge */
+    font-size: 5.5em;
+    color: #fffbfb;
+    cursor: pointer;
+    transform: translateY(-50%); /* Center vertically */
 }
 
-.serverProperties > .propertiesPannel
-
-{
+.serverProperties > .propertiesPannel {
     position: absolute;
     user-select: none;
     top: 10%;
@@ -53,16 +56,15 @@
     width: 100%;
     display: flex;
 }
-.serverProperties .pannelName
-{
-    position: absolute;
-    top: 20%;
-    transform: translateY(-50%);
-    left: 85%;
+
+.serverProperties .pannelName {
     font-family: "Source Code Pro", monospace;
     color: #656363;
     font-size: 1.2em;
+    margin-left: auto;
+    margin-right: 10%;
 }
+
 .serverProperties > .propertiesPannel > textarea::-webkit-scrollbar
 {
     display: none;
